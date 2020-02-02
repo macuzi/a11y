@@ -6,9 +6,9 @@ Focus determines where keyboard events go in the page <br>
 Input, button, and dropdowns have are implicitly focusable. They are already in the tab order + keyboard event handling.<br>
 
 **Not all elements are focusable**
-- [] headers
-- [] paragraphs
-- [] images <br> 
+- [ ] headers
+- [ ] paragraphs
+- [ ] images <br> 
   
 Which is by design, since most cases they will not be interactable.
 
