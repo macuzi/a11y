@@ -3,7 +3,7 @@ A cheat sheet and notes for accessibility
 
 ## Focus
 Focus determines where keyboard events go in the page <br>
-Input, button, and dropdowns have are implicitly focusable. They are already in the tab order + keyboard event handling.<br>
+Input, button, and dropdowns have are implicitly focusable. They are already in the `tab order + keyboard` event handling.<br>
 
 **Not all elements are focusable**
 - [ ] headers
