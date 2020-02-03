@@ -61,3 +61,66 @@ Any `tabindex > 0` is considered bad practice. Can make it confusing for screen 
 if you want to put something earlier in the tab order, the best bet is to move it earlier in the dom.
 
 [tabindex on MDN](https://linkwww.w3.org/TR/html5/editing.html#sequential-focus-navigation-and-the-tabindex-attribute)
+
+### Skip Links
+
+On most websites the main content is not the first thing in the DOM. 
+We often begin with navigation, sublists, sidebars, etc. This means keyboard 
+and screen reader users must navigate through all of this content before they get to 
+the meat of the page. We can create a hidden link that allows keyboard and switch device
+users the ability to jump straight into our page content. These links are often referred to 
+as *skip links*. Below is an exmaple of how we can implement this feature.
+
+- [ ] we make an `a` tag that refers to the ID of another element we have on the page. In this case it wil be 
+`#main__content`. Then we make a class `skip__link` that we can refer in CSS later
+
+```html
+  <a href="#main__content" class="skip__link">Skip to main content</a>
+```
+
+- [ ] We want the skip link to apprear early in the DOM, so we can put it before our navigation.
+```html
+  <a href="#main__content" class="skip__link">Skip to main content</a>
+  <nav>
+    <!-- navbar content -->
+  </nav>
+  <main id="main__content">
+    <!-- main content, now the anchor tag and main are connected  -->
+  </main>
+```  
+
+In newer versions of Chrome and Firefox 🦊, the preceding exmaple will allow you 
+to move down to the main-element when the skip link is pressed.
+
+In older browsers that don't move focus when named anchors are clicked, here is a simple solution.
+```html
+  <main id="main__content" tabIndex="-1">
+    <!-- main content, now the anchor tag and main are connected  -->
+    <!-- added a tabIndex of -1  -->
+  </main>
+```
+
+- [ ] Over in your CSS, here is how you can style your `skip__link` 
+
+```css
+  .skip__link {
+    position: absolute; /* makes it appear in the top left corner of the screen */
+    top: -40px; /* initally position it off screen */
+    left: 0;
+    background: #0d55ff; 
+    color: white;
+    padding: .8rem; /* woudl be 8px if html font size 62.5% */
+    z-index: 100;
+  }
+
+  .skip__link:focus {
+    top: 0; /* moves the element back on screen */
+  }
+```
+[Removing Headaches from Focus Management](https://developers.google.com/web/updates/2016/03/focus-start-point?hl=en)
+
+A great example by the folks at [Gatsby](https://www.gatsbyjs.org)
+> When the page loads hit tab and you'll see the skip link pop-up
+
+
+
