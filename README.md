@@ -1,7 +1,7 @@
 # a11y notes
 A cheat sheet and notes for accessibility 
 
-## Focus
+# Focus
 Focus determines where keyboard events go in the page <br>
 `Input, button, and dropdowns` have are implicitly focusable. They are already in the `tab order + keyboard` event handling.<br>
 
@@ -109,7 +109,7 @@ In older browsers that don't move focus when named anchors are clicked, here is 
     left: 0;
     background: #0d55ff; 
     color: white;
-    padding: .8rem; /* woudl be 8px if html font size 62.5% */
+    padding: .8rem; /* would be 8px if html font size 62.5% */
     z-index: 100;
   }
 
@@ -121,6 +121,52 @@ In older browsers that don't move focus when named anchors are clicked, here is 
 
 A great example by the folks at [Gatsby](https://www.gatsbyjs.org)
 > When the page loads hit tab and you'll see the skip link pop-up
+
+## ARIA
+
+There are times when an original layout in HTML won't cut ✂️ it. To handle special situations like this
+we can use `ARIA`. `ARIA` works by allowing us to specify attributes on elements, which modify the way 
+those elements are translated into the accessibility tree 🌳. 
+
+For example if you create a plain checkbox, a screen reader will annouce that it's a checkbox, its label, and its state.
+
+```html
+  <label>
+    <input type="checkbox">
+    Sign up for our newsletter
+  </label>
+```
+
+If you have to style your own custom `div` checkbox. The below example when annouced 
+by a screen reader will tell you the text this checkbox, but it won't tell you the state.
+
+```html
+  <!-- custom checkbox -->
+  <div class="checkbox checked">
+    Sign up for our newsletter
+  </div>
+```
+
+Using ARIA you can tell the screen reader that this is indeed a checkbox ✅
+Adding `role` and `aria-checked` attributes causes the node in the accessibility tree 
+to have the desired role and state without changing its apperance.
+```html
+  <!-- Now the screen reader will annouce to the user this is a checkbox -->
+  <div class="checkbox checked" role="checkbox" aria-checked="true">
+    Sign up for our newsletter
+  </div>
+```
+
+**Keep in mind that this is the ONLY thing ARIA changes, it's good for modifying the accessibility tree however, it doesn't**
+
+- [ ] modify element apperance
+- [ ] modify element behavior
+- [ ] add focusability 
+- [ ] add keyboard event handling
+
+
+
+
 
 
 
