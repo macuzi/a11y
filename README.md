@@ -164,7 +164,29 @@ to have the desired role and state without changing its apperance.
 - [ ] add focusability 
 - [ ] add keyboard event handling
 
+### Aria Live
 
+`aria-live` allows developers to mark a part of the page as *live*. One practical 
+example might be a status message which appears as a result of either a user action
+or external event. If this message is important enough to grab a sighted user's attention, 
+we can direct assistive technology users attention by setting an `aria-live` attribute on it.
+
+```html
+  <div class="alertbar" aria-live="assertive">
+    Could not connect
+  </div>
+```
+
+`aria-live` has 3 allowable values
+
+| Values       | Description           
+| ------------- |:-------------:| 
+| off (default):| Updates to the region will not be presented to the user unless the assistive technology is currently focused on that region | 
+| polite:      | Assistive technologies **SHOULD** announce updates at the next graceful opportunity, such as the ened of speaking the current sentence or when the user pauses typing.     |   
+| assertive:  | This information holds the highest priority and assistive technologies **SHOULD** notify the user immediately. Because an interpution may disorient users or cause them to not complete their task, authors **SHOULD NOT** use assertive unless the interpution is imperative      |    
+
+There is a lot to cover with **ARIA**, but in a nutshell only use it if you need it. 
+Semantic HTML will get you a very long way, and can save you a lot of effort.
 
 
 
