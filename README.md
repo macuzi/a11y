@@ -186,7 +186,9 @@ we can direct assistive technology users attention by setting an `aria-live` att
 | assertive:  | This information holds the highest priority and assistive technologies **SHOULD** notify the user immediately. Because an interpution may disorient users or cause them to not complete their task, authors **SHOULD NOT** use assertive unless the interpution is imperative      |    
 
 There is a lot to cover with **ARIA**, but in a nutshell only use it if you need it. 
-Semantic HTML will get you a very long way, and can save you a lot of effort.
+Semantic HTML will get you a very long way, and can save you a lot of effort. 
+
+
 
 
 
