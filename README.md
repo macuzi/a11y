@@ -182,11 +182,32 @@ we can direct assistive technology users attention by setting an `aria-live` att
 | Values       | Description           
 | ------------- |:-------------:| 
 | off (default):| Updates to the region will not be presented to the user unless the assistive technology is currently focused on that region | 
-| polite:      | Assistive technologies **SHOULD** announce updates at the next graceful opportunity, such as the ened of speaking the current sentence or when the user pauses typing.     |   
-| assertive:  | This information holds the highest priority and assistive technologies **SHOULD** notify the user immediately. Because an interpution may disorient users or cause them to not complete their task, authors **SHOULD NOT** use assertive unless the interpution is imperative      |    
+| polite:      | Assistive technologies **SHOULD** announce updates at the next graceful opportunity, such as the end of speaking the current sentence or when the user pauses typing.     |   
+| assertive:  | This information holds the highest priority and assistive technologies **SHOULD** notify the user immediately. Because an interpution may disorient users or cause them to not complete their task, authors **SHOULD NOT** use assertive unless the interpution is imperative |    
 
 There is a lot to cover with **ARIA**, but in a nutshell only use it if you need it. 
 Semantic HTML will get you a very long way, and can save you a lot of effort. 
+
+## Objective accessibility guidelines
+
+Many aspects of accessibilty are objectively testable. Here are a few examples 
+
+- [ ] All images *must* have an `alt` attribute.
+- [ ] All form input elements *must* have a label.
+- [ ] The header cells of a data table *must* be marked as header cells using `<th>`.
+- [ ] The page *must* have a `title`.
+- [ ] Color cannot be used as only visual means of converying information.
+
+These things are easily verifiable by an objective standard. The web page either passes or fails on these points. Any person 
+with accessibility training can accurately assess whether a page passes, or fails, and it is possible to write softwares algorithms
+to check for some (though not all) of the objective criteria.
+
+### Accessibility best practices that aren't so easily testable include things like:
+
+- [ ] Using visual cues to focus the user's attention on the main purpose of the web page. 
+- [ ] Ensuring the font is easily readable (How do you define easily?)
+- [ ] Minimize coginitve skills required to use the website.
+
 
 
 
