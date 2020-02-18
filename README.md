@@ -300,4 +300,3 @@ will get impatient listening to the long title as they want to hear other import
 
 **The page <title> SHOULD match (or be very similar to) the top heading in the main content.**
 
-Both the title (<title>) and the top heading in the main content (ideally marked with <h1>) serve essentially the same purpose: to give the page a title. With this in mind, it usually makes sense to match the page title and the top heading with identical text, or at least very similar text. There is some room for slight variations. For example, you might put the website brand at the end of the page title but not in the main heading for the content. Redundancy is a good thing in this case, because it allows users to see the page title whether they're viewing the tabs in a browser, listening to a page load with a screen reader (the title is the first thing screen readers read), or reading through the main content.
