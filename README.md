@@ -224,7 +224,7 @@ glace quickly at the content of a web page to see what the page is about, so the
 Web pages without titles waste the time of screen reader users, because the force users to navigate through the page -- past the main menu 
 into the content -- to find out what the page is about.
 
-✅Good Example #1 `=>` (in React) *react-document-title*
+✅Good Example #1 => *react-document-title*
 
 ```javascript
   import React from 'react';
@@ -232,7 +232,7 @@ into the content -- to find out what the page is about.
 
   function HomePage() {
     return (
-      <DocumentTitle title="Home Page"> // 👈🏾This will allow this specific component to have it's own page title.
+      <DocumentTitle title="Home Page"> // 👈🏾This will allow the specific component to have it's own page title.
         <>
           // ... 💼👔business as usual with regular functional components
         </>
@@ -249,6 +249,17 @@ into the content -- to find out what the page is about.
   }
 ```
 
+The page `<title>` **must** be present and contain text
+
+Screen reader users rely only on text to convey information. If you leave off the title, screen reader users have to browse the page 
+and infer the identity and purpose from the content, whixh is highly inconvenient.
+
+**The page <title> must be updated when the web address changes** 
+
+Any time the web address changes, whether due to a true load event, due to an AJAX call, or a JavaScript event,
+the page `<title>` must change to reflect the new content. Otherwise, the page title wil become out of sync with the content,
+which can lead to confusion, espically if the user arrives at the page via a link sent to them or saved in a bookmark.
+
 Page titles improve SEO as well.
 
 Search engines and site search tools also use the page title when displaying search results. Effective titles help
@@ -256,13 +267,37 @@ users quickly sift through the search results to identify the content they need.
 important component of SEO in addition to accessibility. 
 
 
+**If a page is the result of a user action or scripted change of context, the text of the `<title>` should describe the result or change of context to that user**
 
+✅Good Example: Title with Search Text 
 
+The title includes text of the search.
 
+```html
+  <title>"Warranty" | Search Results</title>
+```
 
+**Titles should be concise**
 
+✅Good example: Concise Page Title
 
+There isn't a technical limit for a page title, nor is there a formal restrcition on `<title>` length 
+on accessibility guidelines, but best practice is to keep it as short as possible, without sacrificing
+accuracy or informativeness.
 
+```html
+  <title>Football Cleats</title>
+```
 
+🚫Bad Example: Page Title Used for Keywords Instead of a True Title 
 
+Cramming a list of keywords into a page title makes the page title too long. People using screen readers
+will get impatient listening to the long title as they want to hear other important information about the page
 
+```html
+  <title>Mortgages Inc. - Mortgage services, best mortgages in New York, low rates, low API, easy financing, variable rates, fixed rate mortgages</title>
+```
+
+**The page <title> SHOULD match (or be very similar to) the top heading in the main content.**
+
+Both the title (<title>) and the top heading in the main content (ideally marked with <h1>) serve essentially the same purpose: to give the page a title. With this in mind, it usually makes sense to match the page title and the top heading with identical text, or at least very similar text. There is some room for slight variations. For example, you might put the website brand at the end of the page title but not in the main heading for the content. Redundancy is a good thing in this case, because it allows users to see the page title whether they're viewing the tabs in a browser, listening to a page load with a screen reader (the title is the first thing screen readers read), or reading through the main content.
