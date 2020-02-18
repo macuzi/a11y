@@ -208,6 +208,57 @@ to check for some (though not all) of the objective criteria.
 - [ ] Ensuring the font is easily readable (How do you define easily?)
 - [ ] Minimize coginitve skills required to use the website.
 
+## Semantic Structure and Navigation
+
+Semantic structure is the foundation of accessibile markup.Screen readers rely on the meaning of HTML elements and attributes 
+to convey information to blind users. It is through the semanntic markup that browsers are able to parse accessibility cues 
+and information to through the accessibility API and pass that information on to users, through assistive technologies, such as 
+screen readers.
+
+### Page Title 
+
+*The Page `<title>` is the first thing that screen reader users hear*
+
+The `<title>` of the page is critical, because it's the first thing a screen reader user hears. Blind users cannot 
+glace quickly at the content of a web page to see what the page is about, so they rely on the page title to give them this information.
+Web pages without titles waste the time of screen reader users, because the force users to navigate through the page -- past the main menu 
+into the content -- to find out what the page is about.
+
+✅Good Example #1 `=>` (in React) *react-document-title*
+
+```javascript
+  import React from 'react';
+  import DocumentTitle from 'react-document-title';
+
+  function HomePage() {
+    return (
+      <DocumentTitle title="Home Page"> // 👈🏾This will allow this specific component to have it's own page title.
+        <>
+          // ... 💼👔business as usual with regular functional components
+        </>
+      </DocumentTitle>
+    )
+  }
+```
+
+✅Good Example #2 => (In React if you can't use a 3rd party library), `componentDidMount()` will do the job.
+
+```javascript
+  componentDidMount() {
+    document.title = 'I am awesome' // ... pure react out the box 📦
+  }
+```
+
+Page titles improve SEO as well.
+
+Search engines and site search tools also use the page title when displaying search results. Effective titles help
+users quickly sift through the search results to identify the content they need. In this sense, good page titles are an 
+important component of SEO in addition to accessibility. 
+
+
+
+
+
 
 
 
