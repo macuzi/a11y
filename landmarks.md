@@ -21,7 +21,7 @@ alter the visual apperance ( and require some extra CSS work ), whereas ARIA rol
 | header | role="banner" | ✅yes |
 |nav|role="navigation"| ✅yes |
 |n/a|role="search"| ✅yes |
-|<main>|role="main"| ✅yes |
-|<footer>|role="contentinfo"|✅yes|
-|<aside>|role="complementary"|✅yes|
-|<section>|role="region"| Mixed Support: Most screen readers list it only if given via `aria-label` or `aria-labelledby`. Note that if each section has a heading, screen reader users will be able to navigate by heading, so it is usually not necessary to give each section or region a name, in fact it can be a bad idea to supply too many landmarks in a page, because its slows down the user's ability to sort through them all.
+|main|role="main"| ✅yes |   
+|footer|role="contentinfo"|✅yes|
+|aside|role="complementary"|✅yes|
+|section|role="region"| Mixed Support: Most screen readers list it only if given via `aria-label` or `aria-labelledby`. Note that if each section has a heading, screen reader users will be able to navigate by heading, so it is usually not necessary to give each section or region a name, in fact it can be a bad idea to supply too many landmarks in a page, because its slows down the user's ability to sort through them all.
