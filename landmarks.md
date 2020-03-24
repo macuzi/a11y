@@ -18,8 +18,8 @@ alter the visual apperance ( and require some extra CSS work ), whereas ARIA rol
 
 | HTML5 | ARIA Role | Listed Among Landmarks by Most Screen Readers | 
 | :-------------: |:-------------:|:-------------:|    
-| <header> | role="banner" | ✅yes |
-|<nav>|role="navigation"| ✅yes |
+| header | role="banner" | ✅yes |
+|nav|role="navigation"| ✅yes |
 |n/a|role="search"| ✅yes |
 |<main>|role="main"| ✅yes |
 |<footer>|role="contentinfo"|✅yes|
