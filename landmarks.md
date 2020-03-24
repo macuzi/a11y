@@ -28,4 +28,4 @@ alter the visual apperance ( and require some extra CSS work ), whereas ARIA rol
 |article| role="article" | Mixed Support: JAWS list it, but other screen readers do not |
 | form | role="form" | Mixed Support: Screen readers list form only if marked as role="form" |
 
-The most useful of these for most websites are header/banner, nav/navigation, main, and footer/contentinfo. Others may be used as well, but they are not as widely applicable across most websites.
+> The most useful of these for most websites are header/banner, nav/navigation, main, and footer/contentinfo. Others may be used as well, but they are not as widely applicable across most websites.
