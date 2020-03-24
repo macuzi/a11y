@@ -24,4 +24,8 @@ alter the visual apperance ( and require some extra CSS work ), whereas ARIA rol
 |main|role="main"| ✅yes |   
 |footer|role="contentinfo"|✅yes|
 |aside|role="complementary"|✅yes|
-|section|role="region"| Mixed Support: Most screen readers list it only if given via `aria-label` or `aria-labelledby`. Note that if each section has a heading, screen reader users will be able to navigate by heading, so it is usually not necessary to give each section or region a name, in fact it can be a bad idea to supply too many landmarks in a page, because its slows down the user's ability to sort through them all.
+|section|role="region"| Mixed Support: Most screen readers list it only if given via `aria-label` or `aria-labelledby`. Note that if each section has a heading, screen reader users will be able to navigate by heading, so it is usually not necessary to give each section or region a name, in fact it can be a bad idea to supply too many landmarks in a page, because its slows down the user's ability to sort through them all.|
+|article| role="article" | Mixed Support: JAWS list it, but other screen readers do not |
+| form | role="form" | Mixed Support: Screen readers list form only if marked as role="form" |
+
+The most useful of these for most websites are header/banner, nav/navigation, main, and footer/contentinfo. Others may be used as well, but they are not as widely applicable across most websites.
