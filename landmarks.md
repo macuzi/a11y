@@ -1,15 +1,4 @@
-# Design Considerations for Blindness
-
-| Design consderation | Why?     
-| ------------- |:-------------:|       
-| All content must be presented in text or via text equivalent | Screen Readers can't read non-content, but it can read the alt=text you provide. | 
-| All functionality must be available using the keyboard. | Even though most blind users can use a mouse, it doesn't do much good because they can't see where the moust pointer is. It's more effective for them to navigate by keyboard. |
-| The content must use markup with good structure and semantics | Screen reader users often pull up lists of headings landmarks and other semantic elements to help understand what is on the page. They can also navigate these elements.
-| All custom controls, must have correct name / label, role and value. They also must change when appropriate (aria-expanded="false" changes to aria-expanded="true" after activating the button) | Unlike native HTML elements, custom controls have no semantic parts natively, so screen readers can't tell users what the widget is and can't update users on the properties of that widget unless you supply that information via ARIA names, roles, states, and properties. |
-
-
-
-# Landmarks
+# Creating Landmarks (HTML5, ARIA)
 
 As a general rule, it is usually best to use native HTML elements rather than their ARIA equivalents whenever possible.
 That said, the end result is effectively the same reason for screen reader users, so either one can be used.
@@ -29,3 +18,31 @@ alter the visual apperance ( and require some extra CSS work ), whereas ARIA rol
 | form | role="form" | Mixed Support: Screen readers list form only if marked as role="form" |
 
 > The most useful of these for most websites are header/banner, nav/navigation, main, and footer/contentinfo. Others may be used as well, but they are not as widely applicable across most websites.
+
+# Best Practices for Landmarks
+
+## All text SHOULD be contained with a landmark region.
+✅Good Example
+```html
+  <header>
+    <div>This is the header.</div>
+  </header>
+  <nav>
+    <div>This is the navigation.</div>
+  </nav>
+  <main>
+    <div>This is the main content.</div>
+    <section>
+      <div>This is a section</div>
+    </section>
+    <article>
+      <div>This is an article.</div>
+    </article>
+    <aside>
+      <div>This is an aside.</div>
+    </aside>
+  </main>
+  <footer>
+    <div>This is a footer</div>
+  </footer>
+```
